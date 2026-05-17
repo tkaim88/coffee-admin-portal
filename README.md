@@ -1,16 +1,86 @@
-# React + Vite
+# Coffee Admin Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
 
-Currently, two official plugins are available:
+Coffee Admin Portal is a React Single Page Application (SPA)
+built for administrators managing coffee shop products.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The project demonstrates advanced React concepts including:
 
-## React Compiler
+- State management using hooks
+- React Router client-side routing
+- Dynamic product searching
+- Form handling and event handling
+- Product editing functionality
+- Local storage persistence
+- Responsive design
+- Component testing using Jest and React Testing Library
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Landing Page
+- Welcomes users to the application
+- Explains the purpose of the admin portal
+
+### Shop Page
+- Displays available coffee products
+- Dynamic search functionality
+- Edit product prices
+
+### Admin Page
+- Add new coffee products
+- Manage inventory dynamically
+
+### Persistence
+- Products remain available after refreshing the browser using localStorage
+
+### Responsive Design
+- Layout adapts to mobile and desktop screens
+
+---
+
+## Technologies Used
+
+- React
+- Vite
+- React Router DOM
+- JavaScript
+- CSS3
+- Jest
+- React Testing Library
+
+---
+
+## Installation Instructions
+
+Clone repository:
+
+```bash
+git clone YOUR_GITHUB_LINK
+
+Navigate into Project:
+
+cd coffee-admin-portal
+
+Install dependancies:
+
+npm install
+
+Run development server:
+
+npm run dev
+
+Running tests:
+
+npm test
+
+Live Demo
+
+For a live demo [click](https://coffee-admin-portal-vc59.vercel.app/)
+
+
+Author
+
+Thomas Komora Buko

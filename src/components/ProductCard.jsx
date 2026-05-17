@@ -1,15 +1,14 @@
-function ProductCard({ product }) {
+function ProductCard({ product, onEditPrice }) {
   return (
-    <div className="card">
+    <div className="product-card">
+      <h2>{product.name}</h2>
 
-      <h3>{product.name}</h3>
+      <p className="price">${product.price}</p>
 
-      <p>{product.description}</p>
-
-      <p>{product.origin}</p>
-
-      <p>${product.price}</p>
-
+      {/* Edit button updates the product price */}
+      <button onClick={() => onEditPrice(product.id)}>
+        Edit Price
+      </button>
     </div>
   );
 }

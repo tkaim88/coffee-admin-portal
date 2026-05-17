@@ -1,33 +1,45 @@
 import { useState } from "react";
 
-function Admin() {
+function Admin({ products, setProducts }) {
+  // Form state variables
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 
+  // Adds new product into global state
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    alert(`Added: ${name} - $${price}`);
+    // Prevent empty values
+    if (!name || !price) return;
 
+    const newProduct = {
+      id: Date.now(),
+      name,
+      price: Number(price),
+    };
+
+    setProducts([...products, newProduct]);
+
+    // Reset form inputs
     setName("");
     setPrice("");
   };
 
   return (
-    <div>
+    <div className="page-container">
       <h1>Admin Panel</h1>
 
-      <form onSubmit={handleSubmit}>
+      <form className="product-form" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Coffee name"
+          placeholder="Product name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
 
         <input
           type="number"
-          placeholder="Price"
+          placeholder="Product price"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
