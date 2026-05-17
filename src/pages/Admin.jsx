@@ -6,7 +6,9 @@ function Admin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Product Added: ${name} - $${price}`);
+
+    alert(`Added: ${name} - $${price}`);
+
     setName("");
     setPrice("");
   };
@@ -18,7 +20,7 @@ function Admin() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Product name"
+          placeholder="Coffee name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />

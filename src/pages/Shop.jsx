@@ -9,9 +9,9 @@ function Shop() {
         <div
           key={item.id}
           style={{
-            border: "1px solid black",
-            margin: "10px",
+            border: "1px solid gray",
             padding: "10px",
+            margin: "10px",
           }}
         >
           <h3>{item.name}</h3>
