@@ -48,19 +48,19 @@ All data persists using browser localStorage.
 
 ## Home Page
 
-![Home Page](./public/screenshots/home-page.png)
+![Home Page](./public/screenshots/Homepage.png)
 
 ---
 
 ## Shop Page
 
-![Shop Page](./public/screenshots/shop-page.png)
+![Shop Page](./public/screenshots/ShopPage.png)
 
 ---
 
 ## Admin Panel
 
-![Admin Page](./public/screenshots/admin-page.png)
+![Admin Page](./public/screenshots/AdminPage.png)
 
 ---
 
