@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"; // ← Added Navigate here
 
 import "./App.css";
 
@@ -37,6 +37,12 @@ function App() {
         <Route
           path="/admin"
           element={<Admin />}
+        />
+
+        {/* ✅ NEW: Catch-all route - redirects any unknown paths to Home */}
+        <Route
+          path="*"
+          element={<Navigate to="/" replace />}
         />
 
       </Routes>
