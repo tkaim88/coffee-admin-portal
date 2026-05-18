@@ -1,25 +1,16 @@
 /* eslint-env jest */
 
-import {
-
-render,
-screen
-
-}
-
+import { render, screen }
 from "@testing-library/react";
 
-import {
-
-BrowserRouter
-
-}
-
+import { BrowserRouter }
 from "react-router-dom";
 
 import Navbar
 from "../components/Navbar";
 
+
+// Test navigation links
 
 test(
 
@@ -40,11 +31,7 @@ render(
 
 expect(
 
-screen.getByText(
-
-/Home/i
-
-)
+screen.getByText(/Home/i)
 
 )
 
@@ -53,9 +40,20 @@ screen.getByText(
 
 expect(
 
-screen.getByText(
+screen.getByText(/Shop/i)
 
-/Shop/i
+)
+
+.toBeInTheDocument();
+
+
+expect(
+
+screen.getByRole(
+
+"link",
+
+{name:/Admin/i}
 
 )
 

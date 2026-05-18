@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 // Custom React hook
 // Central location for all product logic and API requests
-// This hook handles CRUD operations:
+// Handles CRUD operations:
 // Create
 // Read
 // Update
@@ -10,31 +10,39 @@ import { useState, useEffect } from "react";
 
 function useProducts() {
 
-  // Stores all coffee products in state
+  // Stores all coffee products
   const [products, setProducts] = useState([]);
 
 
   // READ REQUEST
-  // useEffect runs once when component loads
-  // Empty dependency array [] means:
-  // run only once during initial render
+  // Runs once when component loads
+  // Fetches all coffee products from json-server
 
   useEffect(() => {
 
     fetch("http://localhost:3000/coffee")
 
-      // Converts response into JSON
+      // Convert response into JSON
       .then((response) => response.json())
 
-      // Stores fetched products in state
-      .then((data) => setProducts(data));
+      // Save fetched data into state
+      .then((data) => setProducts(data))
+
+      .catch((error) => {
+
+        console.log(
+          "Error fetching products:",
+          error
+        );
+
+      });
 
   }, []);
 
 
 
   // CREATE REQUEST
-  // Adds a new product into database
+  // Adds a new coffee product
 
   function addProduct(newProduct) {
 
@@ -43,14 +51,18 @@ function useProducts() {
       "http://localhost:3000/coffee",
 
       {
+
         method: "POST",
 
         headers: {
+
           "Content-Type": "application/json"
+
         },
 
-        // Converts JavaScript object into JSON
+        // Converts JS object into JSON
         body: JSON.stringify(newProduct)
+
       }
 
     )
@@ -59,8 +71,28 @@ function useProducts() {
 
       .then((data) => {
 
-        // Add newly created product to existing state
-        setProducts([...products, data]);
+        // Add newly created product
+        // prevProducts guarantees latest state
+
+        setProducts(
+
+          (prevProducts) => [
+
+            ...prevProducts,
+            data
+
+          ]
+
+        );
+
+      })
+
+      .catch((error) => {
+
+        console.log(
+          "Error adding product:",
+          error
+        );
 
       });
 
@@ -69,7 +101,7 @@ function useProducts() {
 
 
   // UPDATE REQUEST
-  // Updates product price only
+  // Updates product price
 
   function updatePrice(id, newPrice) {
 
@@ -82,7 +114,9 @@ function useProducts() {
         method: "PATCH",
 
         headers: {
+
           "Content-Type": "application/json"
+
         },
 
         body: JSON.stringify({
@@ -99,20 +133,32 @@ function useProducts() {
 
       .then((updatedProduct) => {
 
-        // map loops through products
-        // Replace updated product only
-        // Keep all others unchanged
+        // Replace updated product
+        // Keep remaining products unchanged
 
         setProducts(
 
-          products.map((product) =>
+          (prevProducts) =>
 
-            product.id === id
-              ? updatedProduct
-              : product
+            prevProducts.map(
 
-          )
+              (product) =>
 
+                product.id === id
+                  ? updatedProduct
+                  : product
+
+            )
+
+        );
+
+      })
+
+      .catch((error) => {
+
+        console.log(
+          "Error updating product:",
+          error
         );
 
       });
@@ -140,17 +186,30 @@ function useProducts() {
 
       .then(() => {
 
-        // filter creates a new array
-        // Excludes deleted item
+        // Remove deleted product
+        // filter returns new array
 
         setProducts(
 
-          products.filter(
+          (prevProducts) =>
 
-            (product) => product.id !== id
+            prevProducts.filter(
 
-          )
+              (product) =>
 
+                product.id !== id
+
+            )
+
+        );
+
+      })
+
+      .catch((error) => {
+
+        console.log(
+          "Error deleting product:",
+          error
         );
 
       });
@@ -158,7 +217,9 @@ function useProducts() {
   }
 
 
-  // Makes values available to components
+  // Makes data and functions
+  // available globally
+
   return {
 
     products,

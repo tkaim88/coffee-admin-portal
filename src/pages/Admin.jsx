@@ -5,98 +5,187 @@ from "../context/ProductContext";
 
 
 // Admin component
-// Adds new products
+// Allows administrators to add products
 
 function Admin() {
 
-const { addProduct } =
-useContext(ProductContext);
+  // Access addProduct function
+  // from global context
 
-const [name,setName]=useState("");
-
-const [price,setPrice]=useState("");
-
-const [description,setDescription]=
-useState("");
-
-const [origin,setOrigin]=
-useState("");
+  const { addProduct } =
+  useContext(ProductContext);
 
 
-function handleSubmit(e){
+  // Store form inputs
 
-e.preventDefault();
+  const [name, setName] =
+  useState("");
 
-const newProduct={
+  const [price, setPrice] =
+  useState("");
 
-name,
-price:Number(price),
-description,
-origin
+  const [description, setDescription] =
+  useState("");
 
-};
-
-addProduct(newProduct);
-
-
-setName("");
-setPrice("");
-setDescription("");
-setOrigin("");
-
-}
+  const [origin, setOrigin] =
+  useState("");
 
 
-return(
+  // Runs when form is submitted
 
-<div className="page-container">
+  function handleSubmit(e) {
 
-<h1>Add New Product</h1>
+    // Prevent page refresh
 
-<form
-className="product-form"
-onSubmit={handleSubmit}
->
+    e.preventDefault();
 
-<input
-type="text"
-placeholder="Coffee name"
-value={name}
-onChange={(e)=>setName(e.target.value)}
-/>
 
-<input
-type="text"
-placeholder="Description"
-value={description}
-onChange={(e)=>setDescription(e.target.value)}
-/>
+    // Prevent empty fields
 
-<input
-type="text"
-placeholder="Origin"
-value={origin}
-onChange={(e)=>setOrigin(e.target.value)}
-/>
+    if (
+      !name ||
+      !price ||
+      !description ||
+      !origin
+    ) {
 
-<input
-type="number"
-placeholder="Price"
-value={price}
-onChange={(e)=>setPrice(e.target.value)}
-/>
+      alert(
+        "Please fill all fields"
+      );
 
-<button type="submit">
+      return;
 
-Add Product
+    }
 
-</button>
 
-</form>
+    // Create new product object
 
-</div>
+    const newProduct = {
 
-);
+      name,
+
+      // Converts string into number
+      price: Number(price),
+
+      description,
+
+      origin
+
+    };
+
+
+    // Send new product
+    // to custom hook
+
+    addProduct(newProduct);
+
+
+    // Reset form fields
+
+    setName("");
+
+    setPrice("");
+
+    setDescription("");
+
+    setOrigin("");
+
+  }
+
+
+  return (
+
+    <div className="page-container">
+
+      {/* Page heading */}
+
+      <h1>
+
+        Add New Product
+
+      </h1>
+
+
+      {/* Product form */}
+
+      <form
+      className="product-form"
+      onSubmit={handleSubmit}
+      >
+
+        {/* Coffee name */}
+
+        <input
+        type="text"
+        placeholder="Coffee name"
+        value={name}
+        onChange={
+          (e)=>
+          setName(
+            e.target.value
+          )
+        }
+        />
+
+
+        {/* Coffee description */}
+
+        <input
+        type="text"
+        placeholder="Description"
+        value={description}
+        onChange={
+          (e)=>
+          setDescription(
+            e.target.value
+          )
+        }
+        />
+
+
+        {/* Coffee origin */}
+
+        <input
+        type="text"
+        placeholder="Origin"
+        value={origin}
+        onChange={
+          (e)=>
+          setOrigin(
+            e.target.value
+          )
+        }
+        />
+
+
+        {/* Coffee price */}
+
+        <input
+        type="number"
+        placeholder="Price"
+        value={price}
+        onChange={
+          (e)=>
+          setPrice(
+            e.target.value
+          )
+        }
+        />
+
+
+        {/* Submit button */}
+
+        <button type="submit">
+
+          Add Product
+
+        </button>
+
+      </form>
+
+    </div>
+
+  );
 
 }
 
