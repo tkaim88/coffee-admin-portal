@@ -1,50 +1,59 @@
 import { useState } from "react";
 
 function Admin({ products, setProducts }) {
-  // Form state variables
+  // Stores input field values
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 
-  // Adds new product into global state
+  // Runs when form is submitted
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Prevent empty values
-    if (!name || !price) return;
+    // Prevent empty fields
+    if (!name || !price) {
+      alert("Please fill all fields");
+      return;
+    }
 
+    // Create new product object
     const newProduct = {
       id: Date.now(),
-      name,
+      name: name,
       price: Number(price),
     };
 
+    // Add new product into products array
     setProducts([...products, newProduct]);
 
-    // Reset form inputs
+    // Clear inputs
     setName("");
     setPrice("");
+
+    alert("Product Added Successfully");
   };
 
   return (
     <div className="page-container">
-      <h1>Admin Panel</h1>
+      <h1>Add New Product</h1>
 
       <form className="product-form" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Product name"
+          placeholder="Coffee name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
 
         <input
           type="number"
-          placeholder="Product price"
+          placeholder="Coffee price"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
 
-        <button type="submit">Add Product</button>
+        <button type="submit">
+          Add Product
+        </button>
       </form>
     </div>
   );

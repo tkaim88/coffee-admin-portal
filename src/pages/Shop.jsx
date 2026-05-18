@@ -4,17 +4,24 @@ import ProductCard from "../components/ProductCard";
 import SearchBar from "../components/SearchBar";
 
 function Shop({ products, setProducts }) {
-  // Search state for dynamic filtering
+
   const [search, setSearch] = useState("");
 
-  // Filters products based on search input
+  // =========================
+  // SEARCH FILTER
+  // =========================
+
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase())
   );
 
-  // Updates product price
+  // =========================
+  // EDIT PRICE
+  // =========================
+
   const handleEditPrice = (id) => {
-    const newPrice = prompt("Enter new product price:");
+
+    const newPrice = prompt("Enter new price:");
 
     if (!newPrice) return;
 
@@ -27,9 +34,48 @@ function Shop({ products, setProducts }) {
     setProducts(updatedProducts);
   };
 
+  // =========================
+  // EDIT NAME
+  // =========================
+
+  const handleEditName = (id) => {
+
+    const newName = prompt("Enter new product name:");
+
+    if (!newName) return;
+
+    const updatedProducts = products.map((product) =>
+      product.id === id
+        ? { ...product, name: newName }
+        : product
+    );
+
+    setProducts(updatedProducts);
+  };
+
+  // =========================
+  // DELETE PRODUCT
+  // =========================
+
+  const handleDelete = (id) => {
+
+    const confirmDelete = window.confirm(
+      "Delete this product?"
+    );
+
+    if (!confirmDelete) return;
+
+    const updatedProducts = products.filter(
+      (product) => product.id !== id
+    );
+
+    setProducts(updatedProducts);
+  };
+
   return (
     <div className="page-container">
-      <h1>Shop Products</h1>
+
+      <h1>Coffee Shop</h1>
 
       <SearchBar
         search={search}
@@ -37,13 +83,19 @@ function Shop({ products, setProducts }) {
       />
 
       <div className="product-grid">
+
         {filteredProducts.map((product) => (
+
           <ProductCard
             key={product.id}
             product={product}
             onEditPrice={handleEditPrice}
+            onEditName={handleEditName}
+            onDelete={handleDelete}
           />
+
         ))}
+
       </div>
     </div>
   );

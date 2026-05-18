@@ -1,18 +1,41 @@
 {
-  "products": [
+  "store_info": [
     {
       "id": 1,
-      "name": "Kenyan Coffee",
-      "description": "Fresh roasted coffee beans",
-      "origin": "Mombasa",
-      "price": 15
+      "name": "Coffee R Us",
+      "description": "The go to store for coffee",
+      "phone_number": "555-5555"
+    }
+  ],
+  "coffee": [
+    {
+      "id": 1,
+      "name": "Vanilla Bean",
+      "description": "Medium roast, nutty flavor",
+      "origin": "Colombia",
+      "price": 10
     },
     {
       "id": 2,
-      "name": "Arabica Blend",
-      "description": "Smooth flavor coffee",
-      "origin": "Nairobi",
-      "price": 20
+      "name": "House Blend",
+      "description": "Dark roast, rich flavor",
+      "origin": "Vietnam",
+      "price": 12
+    },
+    {
+      "name": "",
+      "price": "",
+      "id": 3
+    },
+    {
+      "name": "Kenyan",
+      "price": "20",
+      "id": 4
+    },
+    {
+      "name": "kenyan",
+      "price": "10",
+      "id": 5
     }
   ]
 }
