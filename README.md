@@ -279,7 +279,7 @@ npm run dev
 ## 6. Open Browser
 
 ```bash
-http://localhost:5179/
+http://localhost:5173/
 ```
 
 ---
