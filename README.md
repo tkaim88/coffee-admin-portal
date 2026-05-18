@@ -1,7 +1,8 @@
 # ☕ Coffee Admin Portal
 
-A modern React-based administrator portal for managing coffee shop products.  
-This project was developed as part of the Moringa School Software Engineering Program.
+A modern React-based administrator portal for managing coffee shop products dynamically.
+
+This project was developed as part of the Moringa School Software Engineering Program and demonstrates modern frontend development concepts including React Hooks, Context API, client-side routing, CRUD operations, reusable components, and testing.
 
 ---
 
@@ -17,30 +18,18 @@ https://github.com/tkaim88/coffee-admin-portal
 
 # 📌 Project Description
 
-Coffee Admin Portal is a Single Page Application (SPA) built with React and Vite that allows administrators to manage coffee shop products dynamically.
+Coffee Admin Portal is a Single Page Application (SPA) built using React and Vite that allows administrators to manage coffee products within a coffee shop environment.
 
-The application demonstrates modern frontend development concepts including:
-
-- React Hooks
-- State Management
-- Component Reusability
-- Client-side Routing
-- Form Handling
-- Dynamic Rendering
-- Persistent Data Storage
-- Responsive Design
-- Component Testing
+The application simulates a backend using `json-server` and allows users to perform complete CRUD operations while demonstrating key frontend development principles.
 
 The portal enables users to:
 
-- View products
-- Search products
-- Add products
-- Edit product names
+- View available coffee products
+- Search products dynamically
+- Add new products
 - Edit product prices
 - Delete products
-
-All data persists using browser localStorage.
+- Navigate between pages without reloading
 
 ---
 
@@ -67,76 +56,190 @@ All data persists using browser localStorage.
 # 🚀 Features
 
 ## ✅ Landing Page
-Displays information about the coffee shop administrator portal.
+
+Displays welcome information and allows users to search products.
+
+---
 
 ## ✅ Product Listing
-Displays coffee products dynamically using React `.map()` rendering.
 
-## ✅ Add Product
-Allows administrators to add new products through a controlled React form.
+Displays coffee products dynamically using React rendering with:
 
-## ✅ Edit Product Price
-Allows administrators to update coffee prices dynamically.
+```js
+map()
+```
 
-## ✅ Edit Product Name
-Allows administrators to rename products dynamically.
-
-## ✅ Delete Product
-Allows administrators to remove products from the list.
+---
 
 ## ✅ Search Functionality
-Filters products dynamically as the user types.
 
-## ✅ Persistent Data
-Products remain saved after refresh using localStorage.
+Filters products dynamically as users type.
+
+Uses:
+
+```js
+filter()
+includes()
+```
+
+---
+
+## ✅ Add Product
+
+Allows administrators to create new products using controlled React forms.
+
+---
+
+## ✅ Edit Product Price
+
+Allows administrators to update product prices dynamically.
+
+---
+
+## ✅ Delete Product
+
+Allows administrators to remove products from inventory.
+
+---
+
+## ✅ Full CRUD Operations
+
+Implemented using:
+
+- GET
+- POST
+- PATCH
+- DELETE
+
+---
+
+## ✅ Client-side Routing
+
+Implemented with React Router to create a seamless SPA experience.
+
+Routes include:
+
+- `/`
+- `/shop`
+- `/admin`
+
+---
 
 ## ✅ Responsive Design
-Responsive grid layout works on desktop and mobile devices.
 
-## ✅ Client-Side Routing
-Implemented using React Router.
+Responsive grid layout supports desktop and mobile screens.
+
+---
+
+## ✅ Component Testing
+
+Testing implemented using:
+
+- Jest
+- React Testing Library
 
 ---
 
 # 🛠️ Technologies Used
 
+Frontend Technologies:
+
 - React
 - Vite
 - JavaScript (ES6)
-- React Router DOM
-- CSS3
 - HTML5
-- localStorage API
+- CSS3
+- React Router DOM
+
+State Management:
+
+- useState
+- useEffect
+- useContext
+- Custom Hooks
+
+Backend Simulation:
+
+- json-server
+
+Testing:
+
 - Jest
 - React Testing Library
+
+Version Control:
+
+- Git
+- GitHub
+
+Deployment:
+
+- Vercel
 
 ---
 
 # 📂 Project Structure
 
 ```bash
-src/
+coffee-admin-portal/
 │
-├── components/
-│   ├── Navbar.jsx
-│   ├── ProductCard.jsx
-│   ├── ProductForm.jsx
-│   └── SearchBar.jsx
+├── src/
+│   │
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── ProductCard.jsx
+│   │   ├── ProductForm.jsx
+│   │   └── SearchBar.jsx
+│   │
+│   ├── context/
+│   │   └── ProductContext.jsx
+│   │
+│   ├── hooks/
+│   │   └── useProducts.js
+│   │
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Shop.jsx
+│   │   └── Admin.jsx
+│   │
+│   ├── __tests__/
+│   │   ├── Navbar.test.jsx
+│   │   └── ProductCard.test.jsx
+│   │
+│   ├── App.jsx
+│   ├── App.css
+│   ├── main.jsx
+│   └── index.css
 │
-├── pages/
-│   ├── Home.jsx
-│   ├── Shop.jsx
-│   └── Admin.jsx
+├── db.json
+├── package.json
+└── README.md
+```
+
+---
+
+# 🌳 Application Component Hierarchy
+
+```bash
+main.jsx
 │
-├── data/
-│   └── products.js
-│
-├── __tests__/
-│   └── Navbar.test.jsx
-│
-├── App.jsx
-├── App.css
-├── main.jsx
+└── ProductProvider
+      │
+      └── App.jsx
+            │
+            ├── Navbar
+            │
+            ├── Home
+            │     │
+            │     └── SearchBar
+            │
+            ├── Shop
+            │     │
+            │     ├── SearchBar
+            │     │
+            │     └── ProductCard
+            │
+            └── Admin
 ```
 
 ---
@@ -161,16 +264,22 @@ cd coffee-admin-portal
 npm install
 ```
 
-## 4. Start Development Server
+## 4. Start JSON Server
+
+```bash
+npm run server
+```
+
+## 5. Start Development Server
 
 ```bash
 npm run dev
 ```
 
-## 5. Open Browser
+## 6. Open Browser
 
 ```bash
-http://localhost:5173/
+http://localhost:5179/
 ```
 
 ---
@@ -179,84 +288,103 @@ http://localhost:5173/
 
 ## React Router
 
-The application uses React Router for navigation between pages:
+React Router controls navigation between application pages without refreshing the browser.
 
-- `/` → Home Page
-- `/shop` → Product Shop
-- `/admin` → Admin Panel
+Routes:
 
-This creates a seamless Single Page Application experience.
+```text
+/ → Home Page
 
----
+/shop → Shop Page
 
-# 🧠 State Management
-
-The application uses React `useState()` hooks to manage:
-
-- Products
-- Search input
-- Form data
-
-The state is lifted to `App.jsx` and passed through props to child components.
-
----
-
-# 💾 Data Persistence
-
-The project uses browser `localStorage` to simulate backend persistence.
-
-This allows products to remain saved after page refreshes.
-
-Example:
-
-```js
-localStorage.setItem("products", JSON.stringify(products));
+/admin → Admin Page
 ```
 
 ---
 
-# 🔍 Search Functionality
+## State Management
 
-The search bar dynamically filters products using:
+Application state is managed using:
 
-```js
-filter()
-```
+- useState()
+- useEffect()
+- useContext()
+- Custom Hooks
 
-and
-
-```js
-includes()
-```
-
-to create real-time product searching.
+The application uses Context API to make product data accessible throughout the application without excessive prop passing.
 
 ---
 
-# ✏️ Product Editing
+## Custom Hook
 
-Administrators can:
-
-- Edit product names
-- Edit product prices
-
-using dynamic React state updates with:
+A custom hook:
 
 ```js
-map()
+useProducts()
+```
+
+was created to centralize product logic and CRUD functionality.
+
+Responsibilities include:
+
+- Fetching products
+- Creating products
+- Updating products
+- Deleting products
+
+---
+
+## Backend Simulation
+
+The application uses:
+
+```js
+json-server
+```
+
+to simulate a REST API backend.
+
+Data is stored inside:
+
+```bash
+db.json
 ```
 
 ---
 
-# 🗑️ Product Deletion
+## CRUD Logic
 
-Products are removed using:
+### Read
 
 ```js
-filter()
+GET
 ```
 
-which creates a new array excluding the deleted product.
+Retrieves products from the server.
+
+### Create
+
+```js
+POST
+```
+
+Creates a new coffee product.
+
+### Update
+
+```js
+PATCH
+```
+
+Updates product prices.
+
+### Delete
+
+```js
+DELETE
+```
+
+Removes products.
 
 ---
 
@@ -264,11 +392,11 @@ which creates a new array excluding the deleted product.
 
 The application uses custom CSS styling featuring:
 
-- Coffee-bean color palette
-- Responsive grid layout
-- Modern product cards
-- Interactive hover effects
-- Responsive navigation
+- Responsive grid layouts
+- Card-based product display
+- Hover interactions
+- Modern interface styling
+- Mobile responsiveness
 
 ---
 
@@ -279,30 +407,31 @@ Basic component testing was implemented using:
 - Jest
 - React Testing Library
 
-Example tested component:
-
-- Navbar rendering test
-
-Run tests with:
+Run tests:
 
 ```bash
 npm test
 ```
 
+Current tested components:
+
+- Navbar
+- ProductCard
+
 ---
 
 # 📈 Future Improvements
 
-Future enhancements may include:
+Potential future improvements:
 
-- Backend database integration
 - Authentication system
-- Dark mode
 - Product image uploads
 - Product categories
-- Order management
-- API integration
-- User role permissions
+- User roles and permissions
+- Backend database integration
+- Order management system
+- Dashboard analytics
+- Dark mode
 
 ---
 
@@ -313,13 +442,7 @@ Future enhancements may include:
 GitHub:  
 https://github.com/tkaim88
 
-Moringa School – Software Engineering Program
-
----
-
-# 📄 License
-
-This project is licensed under the xirtam License.
+Moringa School — Software Engineering Program
 
 ---
 
@@ -329,3 +452,4 @@ This project is licensed under the xirtam License.
 - React Documentation
 - Vite Documentation
 - React Router Documentation
+- React Testing Library Documentation

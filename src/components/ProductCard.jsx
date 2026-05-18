@@ -1,51 +1,116 @@
 // ProductCard component
-// Responsible for displaying one coffee product
+// Displays one coffee product
+// Receives product data and functions as props
 
 function ProductCard({
-  product,
-  onEditPrice,
-  onDelete,
-  onEditName
+
+  coffee,
+  updatePrice,
+  deleteProduct
+
 }) {
 
   return (
 
-    // Product card container
     <div className="product-card">
 
       {/* Product name */}
-      <h2>{product.name}</h2>
 
-      {/* Product price */}
-      <p className="price">
-        ${product.price}
+      <h2>
+
+        {coffee.name}
+
+      </h2>
+
+
+      {/* Product description */}
+
+      <p>
+
+        {coffee.description}
+
       </p>
 
-      {/* Button container */}
-      <div className="button-group">
 
-        {/* Edit price button */}
-        {/* Sends product id into edit function */}
-        <button onClick={() => onEditPrice(product.id)}>
-          Edit Price
-        </button>
+      {/* Product origin */}
 
-        {/* Edit product name */}
-        <button onClick={() => onEditName(product.id)}>
-          Edit Name
-        </button>
+      <p>
 
-        {/* Delete product button */}
-        <button
-          className="delete-btn"
-          onClick={() => onDelete(product.id)}
-        >
-          Delete
-        </button>
+        Origin:
 
-      </div>
+        {coffee.origin}
+
+      </p>
+
+
+      {/* Product price */}
+
+      <p>
+
+        $
+
+        {coffee.price}
+
+      </p>
+
+
+      {/* Update button */}
+
+      <button
+
+        onClick={() => {
+
+          const newPrice = prompt(
+
+            "Enter new price"
+
+          );
+
+          if (newPrice) {
+
+            updatePrice(
+
+              coffee.id,
+
+              Number(newPrice)
+
+            );
+
+          }
+
+        }}
+
+      >
+
+        Edit Price
+
+      </button>
+
+
+      {/* Delete button */}
+
+      <button
+
+        onClick={() =>
+
+          deleteProduct(
+
+            coffee.id
+
+          )
+
+        }
+
+      >
+
+        Delete
+
+      </button>
+
     </div>
+
   );
+
 }
 
 export default ProductCard;

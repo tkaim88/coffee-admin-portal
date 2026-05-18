@@ -1,90 +1,103 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+import { ProductContext }
+from "../context/ProductContext";
+
 
 // Admin component
-// Allows administrator to add new products
+// Adds new products
 
-function Admin({ products, setProducts }) {
+function Admin() {
 
-  // Stores coffee name input
-  const [name, setName] = useState("");
+const { addProduct } =
+useContext(ProductContext);
 
-  // Stores coffee price input
-  const [price, setPrice] = useState("");
+const [name,setName]=useState("");
 
-  // Runs when form is submitted
-  const handleSubmit = (e) => {
+const [price,setPrice]=useState("");
 
-    // Prevents page refresh
-    e.preventDefault();
+const [description,setDescription]=
+useState("");
 
-    // Validation check
-    // Prevent empty fields
-    if (!name || !price) {
+const [origin,setOrigin]=
+useState("");
 
-      alert("Please fill all fields");
 
-      return;
-    }
+function handleSubmit(e){
 
-    // Create new product object
-    const newProduct = {
+e.preventDefault();
 
-      // Date.now generates unique id
-      id: Date.now(),
+const newProduct={
 
-      name: name,
+name,
+price:Number(price),
+description,
+origin
 
-      // Convert price into number
-      price: Number(price),
-    };
+};
 
-    // Add new product into existing array
-    // Spread operator copies old products
-    setProducts([...products, newProduct]);
+addProduct(newProduct);
 
-    // Clear input fields after submission
-    setName("");
-    setPrice("");
 
-    alert("Product Added Successfully");
-  };
+setName("");
+setPrice("");
+setDescription("");
+setOrigin("");
 
-  return (
+}
 
-    <div className="page-container">
 
-      <h1>Add New Product</h1>
+return(
 
-      {/* Product form */}
-      <form
-        className="product-form"
-        onSubmit={handleSubmit}
-      >
+<div className="page-container">
 
-        {/* Coffee name input */}
-        <input
-          type="text"
-          placeholder="Coffee name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+<h1>Add New Product</h1>
 
-        {/* Coffee price input */}
-        <input
-          type="number"
-          placeholder="Coffee price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
+<form
+className="product-form"
+onSubmit={handleSubmit}
+>
 
-        {/* Submit button */}
-        <button type="submit">
-          Add Product
-        </button>
+<input
+type="text"
+placeholder="Coffee name"
+value={name}
+onChange={(e)=>setName(e.target.value)}
+/>
 
-      </form>
-    </div>
-  );
+<input
+type="text"
+placeholder="Description"
+value={description}
+onChange={(e)=>setDescription(e.target.value)}
+/>
+
+<input
+type="text"
+placeholder="Origin"
+value={origin}
+onChange={(e)=>setOrigin(e.target.value)}
+/>
+
+<input
+type="number"
+placeholder="Price"
+value={price}
+onChange={(e)=>setPrice(e.target.value)}
+/>
+
+<button type="submit">
+
+Add Product
+
+</button>
+
+</form>
+
+</div>
+
+);
+
 }
 
 export default Admin;

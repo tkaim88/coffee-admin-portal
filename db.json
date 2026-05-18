@@ -11,31 +11,58 @@
     {
       "id": 1,
       "name": "Vanilla Bean",
-      "description": "Medium roast, nutty flavor",
+      "description": "Medium roast with nutty flavor",
       "origin": "Colombia",
       "price": 10
     },
     {
       "id": 2,
       "name": "House Blend",
-      "description": "Dark roast, rich flavor",
+      "description": "Dark roast rich flavor",
       "origin": "Vietnam",
       "price": 12
     },
     {
-      "name": "",
-      "price": "",
-      "id": 3
+      "id": 3,
+      "name": "Kenyan Roast",
+      "description": "Strong fruity African blend",
+      "origin": "Kenya",
+      "price": 20
     },
     {
-      "name": "Kenyan",
-      "price": "20",
-      "id": 4
+      "id": 4,
+      "name": "Espresso",
+      "description": "Strong concentrated coffee",
+      "origin": "Italy",
+      "price": 8
     },
     {
-      "name": "kenyan",
-      "price": "10",
-      "id": 5
+      "id": 5,
+      "name": "Cappuccino",
+      "description": "Coffee with steamed milk foam",
+      "origin": "France",
+      "price": 11
+    },
+    {
+      "id": 6,
+      "name": "Latte",
+      "description": "Creamy milk coffee",
+      "origin": "Brazil",
+      "price": 9
+    },
+    {
+      "id": 7,
+      "name": "Cold Brew",
+      "description": "Slow brewed cold coffee",
+      "origin": "Ethiopia",
+      "price": 14
+    },
+    {
+      "id": 8,
+      "name": "Mocha",
+      "description": "Chocolate flavored coffee",
+      "origin": "Mexico",
+      "price": 13
     }
   ]
 }

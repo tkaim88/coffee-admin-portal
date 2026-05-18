@@ -1,104 +1,119 @@
-import { useState } from "react";
+// Shop component
+// Displays all products
+// Filters products using search
 
-import ProductCard from "../components/ProductCard";
-import SearchBar from "../components/SearchBar";
+import {
 
-function Shop({ products, setProducts }) {
+useContext,
+useState
 
-  const [search, setSearch] = useState("");
+}
 
-  // =========================
-  // SEARCH FILTER
-  // =========================
+from "react";
 
-  const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(search.toLowerCase())
-  );
+import {
 
-  // =========================
-  // EDIT PRICE
-  // =========================
+ProductContext
 
-  const handleEditPrice = (id) => {
+}
 
-    const newPrice = prompt("Enter new price:");
+from "../context/ProductContext";
 
-    if (!newPrice) return;
+import SearchBar
+from "../components/SearchBar";
 
-    const updatedProducts = products.map((product) =>
-      product.id === id
-        ? { ...product, price: Number(newPrice) }
-        : product
-    );
+import ProductCard
+from "../components/ProductCard";
 
-    setProducts(updatedProducts);
-  };
+function Shop() {
 
-  // =========================
-  // EDIT NAME
-  // =========================
+const {
 
-  const handleEditName = (id) => {
+products,
+updatePrice,
+deleteProduct
 
-    const newName = prompt("Enter new product name:");
+}
 
-    if (!newName) return;
+=
 
-    const updatedProducts = products.map((product) =>
-      product.id === id
-        ? { ...product, name: newName }
-        : product
-    );
+useContext(ProductContext);
 
-    setProducts(updatedProducts);
-  };
 
-  // =========================
-  // DELETE PRODUCT
-  // =========================
+const [search,setSearch]=
+useState("");
 
-  const handleDelete = (id) => {
 
-    const confirmDelete = window.confirm(
-      "Delete this product?"
-    );
+// Filter products dynamically
 
-    if (!confirmDelete) return;
+const filteredProducts=
 
-    const updatedProducts = products.filter(
-      (product) => product.id !== id
-    );
+products.filter(
 
-    setProducts(updatedProducts);
-  };
+(coffee)=>
 
-  return (
-    <div className="page-container">
+coffee.name
+.toLowerCase()
+.includes(
 
-      <h1>Coffee Shop</h1>
+search.toLowerCase()
 
-      <SearchBar
-        search={search}
-        setSearch={setSearch}
-      />
+)
 
-      <div className="product-grid">
+);
 
-        {filteredProducts.map((product) => (
 
-          <ProductCard
-            key={product.id}
-            product={product}
-            onEditPrice={handleEditPrice}
-            onEditName={handleEditName}
-            onDelete={handleDelete}
-          />
+return(
 
-        ))}
+<div className="page-container">
 
-      </div>
-    </div>
-  );
+<h1>
+
+Coffee Shop
+
+</h1>
+
+
+<SearchBar
+
+search={search}
+setSearch={setSearch}
+
+/>
+
+
+<div className="product-grid">
+
+{
+
+filteredProducts.map(
+
+(coffee)=>(
+
+<ProductCard
+
+key={coffee.id}
+
+coffee={coffee}
+
+updatePrice={updatePrice}
+
+deleteProduct={deleteProduct}
+
+/>
+
+)
+
+)
+
+}
+
+</div>
+
+</div>
+
+);
+
 }
 
 export default Shop;
