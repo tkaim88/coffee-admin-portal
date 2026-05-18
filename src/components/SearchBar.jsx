@@ -19,6 +19,7 @@ function SearchBar({ search, setSearch }) {
 
       className="search-input"
     />
+
   );
 }
 

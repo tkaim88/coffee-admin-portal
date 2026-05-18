@@ -241,3 +241,37 @@ button:hover {
     padding: 20px;
   }
 }
+
+/* Home page container styling */
+/* Centers content and aligns text */
+
+.home-container{
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  min-height:70vh;
+
+  text-align:center;
+  padding:20px;
+
+}
+
+
+/* Search input styling */
+
+.search-input{
+
+  width:300px;
+  padding:12px;
+
+  margin-top:20px;
+
+  border-radius:8px;
+  border:1px solid gray;
+
+  font-size:16px;
+
+}
