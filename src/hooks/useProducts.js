@@ -20,7 +20,7 @@ function useProducts() {
 
   useEffect(() => {
 
-    fetch("http://localhost:3000/coffee")
+    fetch('/coffees')
 
       // Convert response into JSON
       .then((response) => response.json())
@@ -46,10 +46,9 @@ function useProducts() {
 
   function addProduct(newProduct) {
 
-    fetch(
+     fetch(
 
-      "http://localhost:3000/coffee",
-
+       fetch('/coffees'),
       {
 
         method: "POST",
@@ -107,7 +106,7 @@ function useProducts() {
 
     fetch(
 
-      `http://localhost:3000/coffee/${id}`,
+       `/coffees/${id}`,
 
       {
 
@@ -174,7 +173,7 @@ function useProducts() {
 
     fetch(
 
-      `http://localhost:3000/coffee/${id}`,
+      `/coffees/${id}`,
 
       {
 

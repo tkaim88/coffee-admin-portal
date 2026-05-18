@@ -14,7 +14,7 @@ function Home() {
     <div className="home-container">
 
       {/* Main heading */}
-      <h1>Welcome to Coffee Admin Portal</h1>
+      <h1>Welcome to The Coffee Admin Portal</h1>
 
       {/* Description paragraph */}
       <p>
