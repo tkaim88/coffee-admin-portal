@@ -2,38 +2,59 @@
   "coffees": [
     {
       "id": 1,
-      "name": "Ethiopian Yirgacheffe",
-      "description": "Bright, floral, and citrusy with notes of jasmine and lemon",
-      "origin": "Ethiopia",
-      "price": 18.99
+      "name": "Velvet Ember Roast",
+      "description": "Smooth dark roast with cocoa richness and smoky caramel finish",
+      "origin": "Kenya",
+      "price": 22.99
     },
     {
       "id": 2,
-      "name": "Colombian Supremo",
-      "description": "Rich, nutty, and smooth with caramel sweetness",
+      "name": "Copper Moon Espresso",
+      "description": "Bold espresso blend with toasted almond and dark chocolate notes",
       "origin": "Colombia",
-      "price": 16.99
-    },
-    {
-      "id": 3,
-      "name": "Costa Rican Tarrazu",
-      "description": "Clean, bright, and full-bodied with chocolate notes",
-      "origin": "Costa Rica",
       "price": 19.99
     },
     {
+      "id": 3,
+      "name": "Golden Horizon Brew",
+      "description": "Bright citrus body balanced with sweet honey undertones",
+      "origin": "Ethiopia",
+      "price": 24.99
+    },
+    {
       "id": 4,
-      "name": "Sumatran Mandheling",
-      "description": "Earthy, full-bodied, and herbal with low acidity",
+      "name": "Midnight Barrel Reserve",
+      "description": "Deep full-bodied roast with oak spice and mocha aroma",
       "origin": "Indonesia",
-      "price": 17.99
+      "price": 23.99
     },
     {
       "id": 5,
-      "name": "Kenyan AA",
-      "description": "Bold, complex, and wine-like with berry undertones",
-      "origin": "Kenya",
+      "name": "Crimson Peak Arabica",
+      "description": "Elegant medium roast with berry sweetness and floral finish",
+      "origin": "Rwanda",
       "price": 21.99
+    },
+    {
+      "id": 6,
+      "name": "Maple Drift Cold Brew",
+      "description": "Silky cold brew infused with maple sweetness and nutty depth",
+      "origin": "Brazil",
+      "price": 20.99
+    },
+    {
+      "id": 7,
+      "name": "Obsidian Night Blend",
+      "description": "Intense roast with black cherry accents and dark cocoa finish",
+      "origin": "Uganda",
+      "price": 25.99
+    },
+    {
+      "id": 8,
+      "name": "Sunrise Bloom Roast",
+      "description": "Light floral roast layered with peach and citrus brightness",
+      "origin": "Costa Rica",
+      "price": 22.49
     }
   ],
   "orders": []
