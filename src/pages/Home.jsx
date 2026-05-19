@@ -1,38 +1,39 @@
-// Home component
-// Landing page of the application
-
-import { useState } from "react";
-import SearchBar from "../components/SearchBar";
+// Home page component
+// Displays landing page hero section
 
 function Home() {
 
-  // Stores the search input value entered by the user
-  const [search, setSearch] = useState("");
-
   return (
 
-    <div className="home-container">
+    <div className="hero-container">
 
-      {/* Main heading */}
-      <h1>Welcome to The Coffee Admin Portal</h1>
+      {/* Dark overlay improves text readability */}
 
-      {/* Description paragraph */}
-      <p>
+      <div className="hero-overlay">
 
-        Your shop managing solution for all things coffee!
-        This portal allows you to manage products,
-        update prices, search inventory,
-        and maintain an organized e-commerce system.
 
-      </p>
+        {/* Main hero content */}
 
-      {/* Search section positioned below welcome text */}
-      {/* Props are passed to SearchBar so state can be controlled here */}
+        <div className="hero-content">
 
-      <SearchBar
-        search={search}
-        setSearch={setSearch}
-      />
+          <h1>
+
+            Welcome to Copper Roast Café
+
+          </h1>
+
+
+          <p>
+
+            Discover artisan coffee blends inspired by
+            cozy European cafés, mountain roasteries,
+            and rich global flavors.
+
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 

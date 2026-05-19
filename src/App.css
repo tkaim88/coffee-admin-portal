@@ -460,4 +460,122 @@ button:hover {
     color: #6B4423;
 
   }
+
+  /* =========================
+   HERO SECTION
+   Fullscreen coffee landing page
+========================= */
+
+  .hero-container {
+
+/* Full viewport height minus navbar */
+
+     height: calc(100vh - 80px);
+
+ /* European café coffee image */
+
+     background-image:
+       linear-gradient(
+       rgba(0,0,0,0.45),
+       rgba(0,0,0,0.45)
+     ),
+
+     url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop");
+
+     background-size: cover;
+
+     background-position: center;
+
+     background-repeat: no-repeat;
+
+   }
+
+
+/* Dark overlay container */
+
+   .hero-overlay {
+
+      width: 100%;
+
+      height: 100%;
+
+      display: flex;
+
+     justify-content: center;
+
+     align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+   }
+
+
+/* Hero content */
+
+  .hero-content {
+
+    max-width: 800px;
+
+    color: white;
+
+  }
+
+
+/* Main heading */
+
+  .hero-content h1 {
+
+    font-size: 4rem;
+
+    margin-bottom: 25px;
+
+    line-height: 1.2;
+
+    text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+
+   }
+
+
+/* Hero paragraph */
+
+  .hero-content p {
+
+    font-size: 1.3rem;
+
+    line-height: 1.8;
+
+    color: #F5E6D3;
+
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+
+   }
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .hero-container {
+
+    height: calc(100vh - 120px);
+
+  }
+
+  .hero-content h1 {
+
+    font-size: 2.5rem;
+
+  }
+
+  .hero-content p {
+
+    font-size: 1rem;
+
+  }
+
+}
 }
