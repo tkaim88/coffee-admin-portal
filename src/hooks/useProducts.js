@@ -1,32 +1,40 @@
 import { useState, useEffect } from "react";
 import API_URL from "../config/api";
+
 // Custom React hook
-// Central location for all product logic and API requests
-// Handles CRUD operations:
-// Create
-// Read
-// Update
-// Delete
+// Handles all product state + API requests
 
 function useProducts() {
 
   // Stores all coffee products
   const [products, setProducts] = useState([]);
 
-
   // READ REQUEST
-  // Runs once when component loads
-  // Fetches all coffee products from json-server
+  // Fetch all products when app loads
 
   useEffect(() => {
 
     fetch(`${API_URL}/coffees`)
 
-      // Convert response into JSON
-      .then((response) => response.json())
+      .then((response) => {
 
-      // Save fetched data into state
-      .then((data) => setProducts(data))
+        if (!response.ok) {
+
+          throw new Error("Failed to fetch products");
+
+        }
+
+        return response.json();
+
+      })
+
+      .then((data) => {
+
+        console.log("Fetched products:", data);
+
+        setProducts(data);
+
+      })
 
       .catch((error) => {
 
@@ -46,43 +54,40 @@ function useProducts() {
 
   function addProduct(newProduct) {
 
-     fetch(
+    fetch(`${API_URL}/coffees`, {
 
-       `${API_URL}/coffees}`,
-      {
+      method: "POST",
 
-        method: "POST",
+      headers: {
 
-        headers: {
+        "Content-Type": "application/json"
 
-          "Content-Type": "application/json"
+      },
 
-        },
+      body: JSON.stringify(newProduct)
 
-        // Converts JS object into JSON
-        body: JSON.stringify(newProduct)
+    })
 
-      }
+      .then((response) => {
 
-    )
+        if (!response.ok) {
 
-      .then((response) => response.json())
+          throw new Error("Failed to add product");
+
+        }
+
+        return response.json();
+
+      })
 
       .then((data) => {
 
-        // Add newly created product
-        // prevProducts guarantees latest state
+        setProducts((prevProducts) => [
 
-        setProducts(
+          ...prevProducts,
+          data
 
-          (prevProducts) => [
-
-            ...prevProducts,
-            data
-
-          ]
-
-        );
+        ]);
 
       })
 
@@ -104,36 +109,37 @@ function useProducts() {
 
   function updatePrice(id, newPrice) {
 
-    fetch(
+    fetch(`${API_URL}/coffees/${id}`, {
 
-       `${API_URL}/coffees/${id}`,
+      method: "PATCH",
 
-      {
+      headers: {
 
-        method: "PATCH",
+        "Content-Type": "application/json"
 
-        headers: {
+      },
 
-          "Content-Type": "application/json"
+      body: JSON.stringify({
 
-        },
+        price: newPrice
 
-        body: JSON.stringify({
+      })
 
-          price: newPrice
+    })
 
-        })
+      .then((response) => {
 
-      }
+        if (!response.ok) {
 
-    )
+          throw new Error("Failed to update product");
 
-      .then((response) => response.json())
+        }
+
+        return response.json();
+
+      })
 
       .then((updatedProduct) => {
-
-        // Replace updated product
-        // Keep remaining products unchanged
 
         setProducts(
 
@@ -173,16 +179,11 @@ function useProducts() {
 
     fetch(`${API_URL}/coffees/${id}`, {
 
-        method: "DELETE"
+      method: "DELETE"
 
-      }
-
-    )
+    })
 
       .then(() => {
-
-        // Remove deleted product
-        // filter returns new array
 
         setProducts(
 
@@ -212,8 +213,8 @@ function useProducts() {
   }
 
 
-  // Makes data and functions
-  // available globally
+
+  // Export globally available values/functions
 
   return {
 

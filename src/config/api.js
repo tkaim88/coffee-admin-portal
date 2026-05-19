@@ -1,7 +1,7 @@
 // Backend API base URL
-// This points to the deployed Render backend
+// Points to deployed Render backend
 
 const API_URL =
-  "https://coffee-admin-portal.onrender.com/coffees";
+  "https://coffee-admin-portal.onrender.com";
 
 export default API_URL;
