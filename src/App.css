@@ -76,7 +76,7 @@ body {
 }
 
 
-/* Navigation links container */
+/* Navigation links */
 
 .nav-links {
 
@@ -85,9 +85,6 @@ body {
   gap: 25px;
 
 }
-
-
-/* Navigation links */
 
 .nav-links a {
 
@@ -108,7 +105,7 @@ body {
 }
 
 
-/* Hover effect */
+/* Navigation hover */
 
 .nav-links a:hover {
 
@@ -129,9 +126,6 @@ body {
 
 }
 
-
-/* Main titles */
-
 .page-container h1 {
 
   margin-bottom: 30px;
@@ -144,7 +138,7 @@ body {
 
 
 /* =========================
-   HERO SECTION
+   HOME HERO
 ========================= */
 
 .hero-container {
@@ -167,9 +161,6 @@ body {
 
 }
 
-
-/* Hero overlay */
-
 .hero-overlay {
 
   width: 100%;
@@ -188,9 +179,6 @@ body {
 
 }
 
-
-/* Hero content */
-
 .hero-content {
 
   max-width: 900px;
@@ -198,9 +186,6 @@ body {
   color: white;
 
 }
-
-
-/* Hero title */
 
 .hero-content h1 {
 
@@ -210,12 +195,7 @@ body {
 
   line-height: 1.2;
 
-  text-shadow: 0 5px 15px rgba(0,0,0,0.4);
-
 }
-
-
-/* Hero paragraph */
 
 .hero-content p {
 
@@ -223,15 +203,109 @@ body {
 
   line-height: 1.9;
 
+}
+
+
+/* =========================
+   SHOP HERO
+   Uses local coffee-farm.png
+========================= */
+
+.shop-hero {
+
+  min-height: calc(100vh - 90px);
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+}
+
+
+/* Dark overlay */
+
+.shop-overlay {
+
+  width: 100%;
+
+  min-height: calc(100vh - 90px);
+
+  background: rgba(0,0,0,0.35);
+
+  display: flex;
+
+  justify-content: center;
+
+  padding: 40px;
+
+}
+
+
+/* Shop content */
+
+.shop-content {
+
+  width: 100%;
+
+  max-width: 1400px;
+
+  text-align: center;
+
+}
+
+
+/* Shop heading */
+
+.shop-content h1 {
+
+  color: white;
+
+  font-size: 4rem;
+
+  margin-bottom: 15px;
+
+}
+
+
+/* Shop paragraph */
+
+.shop-content p {
+
   color: #F5E6D3;
 
-  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  margin-bottom: 35px;
+
+  line-height: 1.7;
+
+  font-size: 1.2rem;
+
+}
+
+
+/* Center search */
+
+.shop-content .search-input {
+
+  margin-left: auto;
+
+  margin-right: auto;
+
+}
+
+
+/* Push cards down */
+
+.shop-content .product-grid {
+
+  margin-top: 40px;
 
 }
 
 
 /* =========================
-   ADMIN HERO SECTION
+   ADMIN HERO
 ========================= */
 
 .admin-hero {
@@ -249,8 +323,6 @@ body {
   background-size: cover;
 
   background-position: center;
-
-  background-repeat: no-repeat;
 
 }
 
@@ -273,9 +345,6 @@ body {
 
 }
 
-
-/* Admin glass card */
-
 .admin-card {
 
   width: 100%;
@@ -294,43 +363,11 @@ body {
 
   backdrop-filter: blur(12px);
 
-  box-shadow: 0 10px 35px rgba(0,0,0,0.35);
-
-}
-
-
-/* Admin title */
-
-.admin-card h1 {
-
-  color: white;
-
-  font-size: 2.8rem;
-
-  text-align: center;
-
-  margin-bottom: 15px;
-
-}
-
-
-/* Admin subtitle */
-
-.admin-subtitle {
-
-  color: #F5E6D3;
-
-  text-align: center;
-
-  line-height: 1.8;
-
-  margin-bottom: 30px;
-
 }
 
 
 /* =========================
-   SEARCH INPUT
+   SEARCH
 ========================= */
 
 .search-input {
@@ -345,26 +382,7 @@ body {
 
   border-radius: 14px;
 
-  border: 2px solid #D8B08C;
-
-  background-color: #FFF8F0;
-
-  font-size: 1rem;
-
-  outline: none;
-
-  transition: 0.3s ease;
-
-}
-
-
-/* Search focus */
-
-.search-input:focus {
-
-  border-color: #B87333;
-
-  box-shadow: 0 0 12px rgba(184,115,51,0.35);
+  border: none;
 
 }
 
@@ -378,11 +396,9 @@ body {
   display: grid;
 
   grid-template-columns:
-    repeat(auto-fit, minmax(300px, 1fr));
+  repeat(auto-fit,minmax(300px,1fr));
 
   gap: 35px;
-
-  width: 100%;
 
 }
 
@@ -393,7 +409,12 @@ body {
 
 .product-card {
 
-  background-color: #FFF8F0;
+  background-color: rgba(
+    255,
+    248,
+    240,
+    0.95
+  );
 
   border-left: 8px solid #B87333;
 
@@ -401,42 +422,12 @@ body {
 
   border-radius: 22px;
 
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  backdrop-filter: blur(10px);
 
 }
 
 
-/* Card hover */
-
-.product-card:hover {
-
-  transform: translateY(-7px);
-
-  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
-
-}
-
-
-/* Product title */
-
-.product-card h2 {
-
-  margin-bottom: 12px;
-
-  color: #3B2416;
-
-  font-size: 1.5rem;
-
-}
-
-
-/* =========================
-   COFFEE IMAGE
-========================= */
+/* Coffee images */
 
 .coffee-image {
 
@@ -446,54 +437,9 @@ body {
 
   object-fit: cover;
 
-  object-position: center;
-
   border-radius: 16px;
 
   margin-bottom: 18px;
-
-  display: block;
-
-}
-
-
-/* Coffee description */
-
-.coffee-description {
-
-  line-height: 1.7;
-
-  margin-bottom: 15px;
-
-  color: #4B2E1F;
-
-}
-
-
-/* Coffee origin */
-
-.coffee-origin {
-
-  margin-bottom: 12px;
-
-  color: #6B4423;
-
-  font-weight: bold;
-
-}
-
-
-/* Coffee price */
-
-.price {
-
-  font-size: 1.2rem;
-
-  font-weight: bold;
-
-  margin-bottom: 20px;
-
-  color: #B87333;
 
 }
 
@@ -516,101 +462,6 @@ button {
 
   cursor: pointer;
 
-  font-weight: bold;
-
-  transition: 0.25s ease;
-
-}
-
-
-/* Button hover */
-
-button:hover {
-
-  background-color: #8C4E1A;
-
-  transform: scale(1.03);
-
-}
-
-
-/* Button group */
-
-.button-group {
-
-  display: flex;
-
-  gap: 10px;
-
-  flex-wrap: wrap;
-
-}
-
-
-/* Delete button */
-
-.delete-btn {
-
-  background-color: #8B2E2E;
-
-}
-
-
-/* Delete hover */
-
-.delete-btn:hover {
-
-  background-color: #641F1F;
-
-}
-
-
-/* =========================
-   FORM
-========================= */
-
-.product-form {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 20px;
-
-  width: 100%;
-
-}
-
-
-/* Form inputs */
-
-.product-form input {
-
-  padding: 15px;
-
-  border-radius: 14px;
-
-  border: 2px solid #D8B08C;
-
-  background-color: rgba(255,255,255,0.92);
-
-  font-size: 1rem;
-
-  outline: none;
-
-  transition: 0.3s ease;
-
-}
-
-
-/* Input focus */
-
-.product-form input:focus {
-
-  border-color: #B87333;
-
-  box-shadow: 0 0 10px rgba(184,115,51,0.35);
-
 }
 
 
@@ -618,58 +469,25 @@ button:hover {
    MOBILE RESPONSIVE
 ========================= */
 
-@media (max-width: 768px) {
+@media(max-width:768px){
 
-  .navbar {
+.navbar{
 
-    flex-direction: column;
+flex-direction:column;
 
-    gap: 15px;
+}
 
-    padding: 20px;
+.hero-content h1,
+.shop-content h1{
 
-  }
+font-size:2.5rem;
 
-  .page-container {
+}
 
-    padding: 25px;
+.product-grid{
 
-  }
+grid-template-columns:1fr;
 
-  .product-grid {
-
-    grid-template-columns: 1fr;
-
-  }
-
-  .hero-content h1 {
-
-    font-size: 2.8rem;
-
-  }
-
-  .hero-content p {
-
-    font-size: 1rem;
-
-  }
-
-  .admin-card {
-
-    padding: 25px;
-
-  }
-
-  .admin-card h1 {
-
-    font-size: 2rem;
-
-  }
-
-  .coffee-image {
-
-    height: 220px;
-
-  }
+}
 
 }

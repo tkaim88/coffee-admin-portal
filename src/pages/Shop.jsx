@@ -1,11 +1,12 @@
 // Shop component
 // Displays all products
 // Filters products using search
+// Adds plantation background image
 
 import {
 
-useContext,
-useState
+  useContext,
+  useState
 
 }
 
@@ -13,7 +14,7 @@ from "react";
 
 import {
 
-ProductContext
+  ProductContext
 
 }
 
@@ -25,94 +26,160 @@ from "../components/SearchBar";
 import ProductCard
 from "../components/ProductCard";
 
+/* Import local background image */
+
+import coffeeFarm
+from "../assets/coffee-farm.png";
+
+
 function Shop() {
 
-const {
+  /* Access global product data */
 
-products,
-updatePrice,
-deleteProduct
+  const {
 
-}
+    products,
+    updatePrice,
+    deleteProduct
 
-=
+  }
 
-useContext(ProductContext);
-
-
-const [search,setSearch]=
-useState("");
+  = useContext(ProductContext);
 
 
-// Filter products dynamically
+  /* Search state */
 
-const filteredProducts=
+  const [
 
-products.filter(
+    search,
+    setSearch
 
-(coffee)=>
+  ]
 
-coffee.name
-.toLowerCase()
-.includes(
-
-search.toLowerCase()
-
-)
-
-);
+  = useState("");
 
 
-return(
+  /* Filter coffees */
 
-<div className="page-container">
+  const filteredProducts =
 
-<h1>
+    products.filter(
 
-Coffee Shop
+      (coffee)=>
 
-</h1>
+      coffee.name
+      .toLowerCase()
+      .includes(
+
+        search.toLowerCase()
+
+      )
+
+    );
 
 
-<SearchBar
+  return(
 
-search={search}
-setSearch={setSearch}
+    /* Main shop background */
 
-/>
+    <div
+
+      className="shop-hero"
+
+      style={{
+
+        backgroundImage:
+
+        `linear-gradient(
+
+          rgba(0,0,0,0.55),
+
+          rgba(0,0,0,0.55)
+
+        ),
+
+        url(${coffeeFarm})`
+
+      }}
+
+    >
+
+      {/* Overlay */}
+
+      <div className="shop-overlay">
+
+        {/* Content container */}
+
+        <div className="shop-content">
+
+          {/* Heading */}
+
+          <h1>
+
+            Coffee Shop
+
+          </h1>
 
 
-<div className="product-grid">
+          {/* Description */}
 
-{
+          <p>
 
-filteredProducts.map(
+            Discover premium coffee
+            selections from around
+            the world.
 
-(coffee)=>(
+          </p>
 
-<ProductCard
 
-key={coffee.id}
+          {/* Search */}
 
-coffee={coffee}
+          <SearchBar
 
-updatePrice={updatePrice}
+            search={search}
 
-deleteProduct={deleteProduct}
+            setSearch={setSearch}
 
-/>
+          />
 
-)
 
-)
+          {/* Products */}
 
-}
+          <div className="product-grid">
 
-</div>
+            {
 
-</div>
+              filteredProducts.map(
 
-);
+                (coffee)=>(
+
+                  <ProductCard
+
+                    key={coffee.id}
+
+                    coffee={coffee}
+
+                    updatePrice={updatePrice}
+
+                    deleteProduct={deleteProduct}
+
+                  />
+
+                )
+
+              )
+
+            }
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  );
 
 }
 
