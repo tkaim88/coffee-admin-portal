@@ -9,7 +9,7 @@ This project was developed as part of the Moringa School Software Engineering Pr
 # 🌐 Live Demo
 
 🔗 Render Deployment:  
-https://coffee-admin-portal.onrender.com/coffee
+https://coffee-admin-portal.onrender.com/
 
 🔗 GitHub Repository:  
 https://github.com/tkaim88/coffee-admin-portal
