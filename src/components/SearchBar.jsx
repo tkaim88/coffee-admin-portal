@@ -1,26 +1,50 @@
 // SearchBar component
-// Allows users to search products dynamically
+// Receives search state and setter function
+// Used for filtering coffee products dynamically
 
-function SearchBar({ search, setSearch }) {
+function SearchBar({
+
+  search,
+  setSearch
+
+}) {
 
   return (
 
-    <input
-      type="text"
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        marginBottom: "35px"
+      }}
+    >
 
-      // Placeholder text inside input
-      placeholder="Search coffee product..."
+      {/* Search input */}
 
-      // Controlled input value
-      value={search}
+      <input
 
-      // Updates search state whenever user types
-      onChange={(e) => setSearch(e.target.value)}
+        type="text"
 
-      className="search-input"
-    />
+        placeholder="Search coffee..."
+
+        value={search}
+
+        onChange={(e) =>
+
+          setSearch(
+            e.target.value
+          )
+
+        }
+
+        className="search-input"
+
+      />
+
+    </div>
 
   );
+
 }
 
 export default SearchBar;

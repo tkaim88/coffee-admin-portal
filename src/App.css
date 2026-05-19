@@ -464,6 +464,120 @@ button {
 
 }
 
+/* =========================
+   SHOP PAGE HERO SECTION
+========================= */
+
+.shop-hero {
+
+  min-height: calc(100vh - 90px);
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+}
+
+
+/* Dark overlay */
+
+.shop-overlay {
+
+  width: 100%;
+
+  min-height: calc(100vh - 90px);
+
+  padding: 50px;
+
+  background: rgba(
+    0,
+    0,
+    0,
+    0.35
+  );
+
+}
+
+
+/* Main shop content */
+
+.shop-content {
+
+  max-width: 1400px;
+
+  margin: auto;
+
+}
+
+
+/* Shop title */
+
+.shop-content h1 {
+
+  color: white;
+
+  text-align: center;
+
+  font-size: 3rem;
+
+  margin-bottom: 15px;
+
+}
+
+
+/* Shop description */
+
+.shop-content p {
+
+  color: #F5E6D3;
+
+  text-align: center;
+
+  font-size: 1.1rem;
+
+  margin-bottom: 35px;
+
+}
+
+
+/* Center search bar */
+
+.shop-content .search-input {
+
+  display: block;
+
+  margin-left: auto;
+
+  margin-right: auto;
+
+}
+
+
+/* Keep cards above overlays */
+
+.product-grid {
+
+  position: relative;
+
+  z-index: 2;
+
+}
+
+
+/* Product cards remain readable */
+
+.product-card {
+
+  background: rgba(
+    255,
+    248,
+    240,
+    0.95
+  );
+
+}
 
 /* =========================
    MOBILE RESPONSIVE
