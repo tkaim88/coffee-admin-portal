@@ -1,5 +1,5 @@
 // Home page component
-// Displays landing page hero section
+// Displays fullscreen coffee hero section
 
 function Home() {
 
@@ -7,26 +7,26 @@ function Home() {
 
     <div className="hero-container">
 
-      {/* Dark overlay improves text readability */}
+      {/* Dark overlay for readability */}
 
       <div className="hero-overlay">
 
 
-        {/* Main hero content */}
+        {/* Hero text content */}
 
         <div className="hero-content">
 
           <h1>
 
-            Welcome to Copper Roast Café
+            Copper Roast Café
 
           </h1>
 
 
           <p>
 
-            Discover artisan coffee blends inspired by
-            cozy European cafés, mountain roasteries,
+            Experience artisan coffee inspired by
+            cozy European cafés, handcrafted espresso,
             and rich global flavors.
 
           </p>

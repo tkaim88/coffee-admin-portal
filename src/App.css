@@ -42,7 +42,9 @@
 }
 
 
-/* Navigation links */
+/* =========================
+   NAVIGATION LINKS
+========================= */
 
 .nav-links {
 
@@ -105,49 +107,86 @@
 
 
 /* =========================
-   HOME PAGE
+   HERO HOMEPAGE
 ========================= */
 
-.home-container {
+.hero-container {
+
+  height: calc(100vh - 90px);
+
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.50),
+      rgba(0,0,0,0.50)
+    ),
+
+    url("https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+}
+
+
+/* Dark overlay */
+
+.hero-overlay {
+
+  width: 100%;
+
+  height: 100%;
 
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
-  min-height: 70vh;
+  justify-content: center;
+
+  align-items: center;
 
   text-align: center;
 
-  padding: 30px;
+  padding: 20px;
 
 }
 
 
-/* Home title */
+/* Hero text container */
 
-.home-container h1 {
+.hero-content {
 
-  font-size: 3.5rem;
+  max-width: 850px;
+
+  color: white;
+
+}
+
+
+/* Main hero heading */
+
+.hero-content h1 {
+
+  font-size: 4rem;
 
   margin-bottom: 25px;
 
-  color: #3B2416;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.4);
 
 }
 
 
-/* Home description */
+/* Hero paragraph */
 
-.home-container p {
+.hero-content p {
 
-  max-width: 750px;
+  font-size: 1.3rem;
 
   line-height: 1.8;
 
-  font-size: 1.15rem;
+  color: #F5E6D3;
 
-  color: #4B2E1F;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 
 }
 
@@ -254,6 +293,53 @@
 }
 
 
+/* =========================
+   COFFEE IMAGE STYLING
+========================= */
+
+.coffee-image {
+
+  width: 100%;
+
+  height: 220px;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  border-radius: 14px;
+
+  margin-bottom: 18px;
+
+  display: block;
+
+}
+
+
+/* Coffee description */
+
+.coffee-description {
+
+  line-height: 1.6;
+
+  margin-bottom: 15px;
+
+  color: #4B2E1F;
+
+}
+
+
+/* Coffee origin */
+
+.coffee-origin {
+
+  margin-bottom: 12px;
+
+  color: #6B4423;
+
+}
+
+
 /* Price styling */
 
 .price {
@@ -327,7 +413,7 @@ button:hover {
 }
 
 
-/* Delete hover */
+/* Delete button hover */
 
 .delete-btn:hover {
 
@@ -401,12 +487,6 @@ button:hover {
 
   }
 
-  .home-container h1 {
-
-    font-size: 2.3rem;
-
-  }
-
   .page-container {
 
     padding: 20px;
@@ -416,152 +496,6 @@ button:hover {
   .product-grid {
 
     grid-template-columns: 1fr;
-
-  }
-
-/* =========================
-    COFFEE IMAGE STYLING
-========================= */
-
-  .coffee-image {
-
-    width: 100%;
-
-    height: 220px;
-
-    object-fit: cover;
-
-    border-radius: 14px;
-
-    margin-bottom: 18px;
-
-  }
-
-
-/* Coffee description */
-
-  .coffee-description {
-
-    line-height: 1.6;
-
-    margin-bottom: 15px;
-
-    color: #4B2E1F;
-
-  }
-
-
-/* Coffee origin */
-
-  .coffee-origin {
-
-    margin-bottom: 12px;
-
-    color: #6B4423;
-
-  }
-
-  /* =========================
-   HERO SECTION
-   Fullscreen coffee landing page
-========================= */
-
-  .hero-container {
-
-/* Full viewport height minus navbar */
-
-     height: calc(100vh - 80px);
-
- /* European café coffee image */
-
-     background-image:
-       linear-gradient(
-       rgba(0,0,0,0.45),
-       rgba(0,0,0,0.45)
-     ),
-
-     url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop");
-
-     background-size: cover;
-
-     background-position: center;
-
-     background-repeat: no-repeat;
-
-   }
-
-
-/* Dark overlay container */
-
-   .hero-overlay {
-
-      width: 100%;
-
-      height: 100%;
-
-      display: flex;
-
-     justify-content: center;
-
-     align-items: center;
-
-    text-align: center;
-
-    padding: 20px;
-
-   }
-
-
-/* Hero content */
-
-  .hero-content {
-
-    max-width: 800px;
-
-    color: white;
-
-  }
-
-
-/* Main heading */
-
-  .hero-content h1 {
-
-    font-size: 4rem;
-
-    margin-bottom: 25px;
-
-    line-height: 1.2;
-
-    text-shadow: 0 4px 10px rgba(0,0,0,0.4);
-
-   }
-
-
-/* Hero paragraph */
-
-  .hero-content p {
-
-    font-size: 1.3rem;
-
-    line-height: 1.8;
-
-    color: #F5E6D3;
-
-    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-
-   }
-
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-
-  .hero-container {
-
-    height: calc(100vh - 120px);
 
   }
 
@@ -577,5 +511,4 @@ button:hover {
 
   }
 
-}
 }

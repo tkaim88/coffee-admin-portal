@@ -6,7 +6,7 @@
       "description": "Smooth dark roast with cocoa richness and smoky caramel finish",
       "origin": "Kenya",
       "price": 22.99,
-      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
+      "image": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "description": "Bold espresso blend with toasted almond and dark chocolate notes",
       "origin": "Colombia",
       "price": 19.99,
-      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop"
+      "image": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "description": "Bright citrus body balanced with sweet honey undertones",
       "origin": "Ethiopia",
       "price": 24.99,
-      "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop"
+      "image": "https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "description": "Deep full-bodied roast with oak spice and mocha aroma",
       "origin": "Indonesia",
       "price": 23.99,
-      "image": "https://images.unsplash.com/photo-1459755486867-b55449bb39ff?q=80&w=1200&auto=format&fit=crop"
+      "image": "https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "description": "Elegant medium roast with berry sweetness and floral finish",
       "origin": "Rwanda",
       "price": 21.99,
-      "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1200&auto=format&fit=crop"
+      "image": "https://images.pexels.com/photos/585750/pexels-photo-585750.jpeg"
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "description": "Silky cold brew infused with maple sweetness and nutty depth",
       "origin": "Brazil",
       "price": 20.99,
-      "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1200&auto=format&fit=crop"
+      "image": "https://images.pexels.com/photos/2074130/pexels-photo-2074130.jpeg"
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "description": "Intense roast with black cherry accents and dark cocoa finish",
       "origin": "Uganda",
       "price": 25.99,
-      "image": "https://images.unsplash.com/photo-1494314671902-399b18174975?q=80&w=1200&auto=format&fit=crop"
+      "image": "https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg"
     },
     {
       "id": 8,
@@ -62,7 +62,7 @@
       "description": "Light floral roast layered with peach and citrus brightness",
       "origin": "Costa Rica",
       "price": 22.49,
-      "image": "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1200&auto=format&fit=crop"
+      "image": "https://images.pexels.com/photos/977876/pexels-photo-977876.jpeg"
     }
   ],
   "orders": []
