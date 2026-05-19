@@ -1,4 +1,10 @@
-/* eslint-env jest */
+import {
+
+  test,
+  expect,
+  vi
+
+} from "vitest";
 
 import { render, screen }
 from "@testing-library/react";
@@ -26,7 +32,7 @@ value={
 
 {
 
-addProduct:jest.fn()
+addProduct:vi.fn()
 
 }
 

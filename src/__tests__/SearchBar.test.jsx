@@ -1,6 +1,12 @@
-/* eslint-env jest */
-
 // Import testing tools
+import {
+
+  test,
+  expect,
+  vi
+
+} from "vitest";
+
 import { render, screen, fireEvent }
 from "@testing-library/react";
 
@@ -18,7 +24,7 @@ test(
 
 // Mock search function
 
-const setSearch=jest.fn();
+const setSearch=vi.fn();
 
 
 // Render component

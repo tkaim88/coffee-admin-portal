@@ -1,4 +1,7 @@
-/* eslint-env jest */
+import {
+  test,
+  expect
+} from "vitest";
 
 import { render, screen }
 from "@testing-library/react";
@@ -8,6 +11,7 @@ from "react-router-dom";
 
 import Navbar
 from "../components/Navbar";
+
 
 
 // Test navigation links

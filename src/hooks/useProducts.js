@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import API_URL from "../config/api";
 // Custom React hook
 // Central location for all product logic and API requests
 // Handles CRUD operations:
@@ -20,7 +20,7 @@ function useProducts() {
 
   useEffect(() => {
 
-    fetch('/coffees')
+    fetch(`${API_URL}/coffees`)
 
       // Convert response into JSON
       .then((response) => response.json())
@@ -48,7 +48,7 @@ function useProducts() {
 
      fetch(
 
-       fetch('/coffees'),
+       `${API_URL}/coffees}`,
       {
 
         method: "POST",
@@ -106,7 +106,7 @@ function useProducts() {
 
     fetch(
 
-       `/coffees/${id}`,
+       `${API_URL}/coffees/${id}`,
 
       {
 
@@ -171,11 +171,7 @@ function useProducts() {
 
   function deleteProduct(id) {
 
-    fetch(
-
-      `/coffees/${id}`,
-
-      {
+    fetch(`${API_URL}/coffees/${id}`, {
 
         method: "DELETE"
 
