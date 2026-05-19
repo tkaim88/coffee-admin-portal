@@ -1,22 +1,21 @@
+// Admin page component
+// Fullscreen coffee plantation admin dashboard
+
 import { useState, useContext } from "react";
 
 import { ProductContext }
 from "../context/ProductContext";
 
 
-// Admin component
-// Allows administrators to add products
-
 function Admin() {
 
   // Access addProduct function
-  // from global context
 
   const { addProduct } =
   useContext(ProductContext);
 
 
-  // Store form inputs
+  // Form state
 
   const [name, setName] =
   useState("");
@@ -31,16 +30,14 @@ function Admin() {
   useState("");
 
 
-  // Runs when form is submitted
+  // Handle form submission
 
   function handleSubmit(e) {
-
-    // Prevent page refresh
 
     e.preventDefault();
 
 
-    // Prevent empty fields
+    // Prevent empty submissions
 
     if (
       !name ||
@@ -64,7 +61,6 @@ function Admin() {
 
       name,
 
-      // Converts string into number
       price: Number(price),
 
       description,
@@ -74,13 +70,12 @@ function Admin() {
     };
 
 
-    // Send new product
-    // to custom hook
+    // Add product globally
 
     addProduct(newProduct);
 
 
-    // Reset form fields
+    // Reset form
 
     setName("");
 
@@ -95,93 +90,120 @@ function Admin() {
 
   return (
 
-    <div className="page-container">
+    // Fullscreen admin hero
 
-      {/* Page heading */}
-
-      <h1>
-
-        Add New Product
-
-      </h1>
+    <div className="admin-hero">
 
 
-      {/* Product form */}
+      {/* Dark overlay */}
 
-      <form
-      className="product-form"
-      onSubmit={handleSubmit}
-      >
-
-        {/* Coffee name */}
-
-        <input
-        type="text"
-        placeholder="Coffee name"
-        value={name}
-        onChange={
-          (e)=>
-          setName(
-            e.target.value
-          )
-        }
-        />
+      <div className="admin-overlay">
 
 
-        {/* Coffee description */}
+        {/* Glassmorphism admin card */}
 
-        <input
-        type="text"
-        placeholder="Description"
-        value={description}
-        onChange={
-          (e)=>
-          setDescription(
-            e.target.value
-          )
-        }
-        />
+        <div className="admin-card">
 
 
-        {/* Coffee origin */}
+          {/* Admin heading */}
 
-        <input
-        type="text"
-        placeholder="Origin"
-        value={origin}
-        onChange={
-          (e)=>
-          setOrigin(
-            e.target.value
-          )
-        }
-        />
+          <h1>
+
+            Coffee Control Center
+
+          </h1>
 
 
-        {/* Coffee price */}
+          {/* Subtitle */}
 
-        <input
-        type="number"
-        placeholder="Price"
-        value={price}
-        onChange={
-          (e)=>
-          setPrice(
-            e.target.value
-          )
-        }
-        />
+          <p className="admin-subtitle">
+
+            Manage your mountain-grown artisan coffee collection.
+
+          </p>
 
 
-        {/* Submit button */}
+          {/* Product form */}
 
-        <button type="submit">
+          <form
+            className="product-form"
+            onSubmit={handleSubmit}
+          >
 
-          Add Product
 
-        </button>
+            {/* Coffee name */}
 
-      </form>
+            <input
+              type="text"
+              placeholder="Coffee name"
+              value={name}
+              onChange={
+                (e)=>
+                setName(
+                  e.target.value
+                )
+              }
+            />
+
+
+            {/* Description */}
+
+            <input
+              type="text"
+              placeholder="Description"
+              value={description}
+              onChange={
+                (e)=>
+                setDescription(
+                  e.target.value
+                )
+              }
+            />
+
+
+            {/* Origin */}
+
+            <input
+              type="text"
+              placeholder="Origin"
+              value={origin}
+              onChange={
+                (e)=>
+                setOrigin(
+                  e.target.value
+                )
+              }
+            />
+
+
+            {/* Price */}
+
+            <input
+              type="number"
+              placeholder="Price"
+              value={price}
+              onChange={
+                (e)=>
+                setPrice(
+                  e.target.value
+                )
+              }
+            />
+
+
+            {/* Submit button */}
+
+            <button type="submit">
+
+              Add Product
+
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
 
     </div>
 
