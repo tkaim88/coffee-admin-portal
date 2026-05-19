@@ -1,6 +1,6 @@
 // ProductCard component
-// Displays one coffee product
-// Receives product data and functions as props
+// Displays a single coffee product
+// Receives coffee data and CRUD functions as props
 
 function ProductCard({
 
@@ -14,7 +14,20 @@ function ProductCard({
 
     <div className="product-card">
 
-      {/* Product name */}
+      {/* Coffee image */}
+
+      <img
+
+        src={coffee.image}
+
+        alt={coffee.name}
+
+        className="coffee-image"
+
+      />
+
+
+      {/* Coffee name */}
 
       <h2>
 
@@ -23,29 +36,31 @@ function ProductCard({
       </h2>
 
 
-      {/* Product description */}
+      {/* Coffee description */}
 
-      <p>
+      <p className="coffee-description">
 
         {coffee.description}
 
       </p>
 
 
-      {/* Product origin */}
+      {/* Coffee origin */}
 
-      <p>
+      <p className="coffee-origin">
 
-        Origin:
+        <strong>Origin:</strong>
+
+        {" "}
 
         {coffee.origin}
 
       </p>
 
 
-      {/* Product price */}
+      {/* Coffee price */}
 
-      <p>
+      <p className="price">
 
         $
 
@@ -54,58 +69,68 @@ function ProductCard({
       </p>
 
 
-      {/* Update button */}
+      {/* Button container */}
 
-      <button
+      <div className="button-group">
 
-        onClick={() => {
+        {/* Update button */}
 
-          const newPrice = prompt(
+        <button
 
-            "Enter new price"
+          onClick={() => {
 
-          );
+            const newPrice = prompt(
 
-          if (newPrice) {
-
-            updatePrice(
-
-              coffee.id,
-
-              Number(newPrice)
+              "Enter new price"
 
             );
 
+            // Prevent empty updates
+
+            if (newPrice) {
+
+              updatePrice(
+
+                coffee.id,
+
+                Number(newPrice)
+
+              );
+
+            }
+
+          }}
+
+        >
+
+          Edit Price
+
+        </button>
+
+
+        {/* Delete button */}
+
+        <button
+
+          className="delete-btn"
+
+          onClick={() =>
+
+            deleteProduct(
+
+              coffee.id
+
+            )
+
           }
 
-        }}
+        >
 
-      >
+          Delete
 
-        Edit Price
+        </button>
 
-      </button>
-
-
-      {/* Delete button */}
-
-      <button
-
-        onClick={() =>
-
-          deleteProduct(
-
-            coffee.id
-
-          )
-
-        }
-
-      >
-
-        Delete
-
-      </button>
+      </div>
 
     </div>
 
